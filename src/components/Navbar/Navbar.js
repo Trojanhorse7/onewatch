@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import { Link } from "react-router-dom";
 import logoImg from "../../assets/ONEWATCH LOGO.png";
+import logoImg3 from "../../assets/ONEWATCH LOGO3.png";
 import {GiHamburgerMenu} from "react-icons/gi";
-import {IoMdClose} from "react-icons/io";
-import {BsFillMoonFill} from "react-icons/bs"
+import {AiFillCloseSquare} from "react-icons/ai";
+import {BsFillMoonFill, BsBrightnessHighFill} from "react-icons/bs";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [isOpened, setIsOpened] = useState(true);
   const [isScroll, setIsScroll] = useState(false);
-  
+
   const openMenuHandler = () => {
     setIsOpened(!isOpened);
   }
@@ -35,19 +36,22 @@ const Navbar = () => {
     <div className={`navbar ${isScroll ? "sticky" : ""}`}>
       <div className="wrapper">
         <div className='navbar-1'>
-          <Link to="/"><img src={logoImg} alt="mergingtrader-logo" /></Link>
+          <Link to="/">{props.theme === "light" ? <img src={logoImg} alt="onewatch-logo" /> : <img src={logoImg3} alt="onewatch-logo" />}</Link>
         </div>
         <div className={`navbar-2 ${!isOpened ? "active" : ""}`}>
           <div className='navbar-2-1'>
-            <IoMdClose onClick={openMenuHandler} className="navbar-close" />
+            <AiFillCloseSquare onClick={openMenuHandler} className="navbar-close" />
             <ul>
               <li><Link to="/" onClick={e => {openMenuHandler(); scrollhandler()}}>Home</Link></li>
-              <li><Link to="/dashboard/investment" onClick={ e => {openMenuHandler(); scrollhandler()}}>Calculator</Link></li>
-              <li><a href="#faqs" onClick={openMenuHandler}>FAQ</a></li>
+              <li><Link to="/" onClick={ e => {openMenuHandler(); scrollhandler()}}>Calculator</Link></li>
+              <li><Link to="/" onClick={ e => {openMenuHandler(); scrollhandler()}}>FAQ</Link></li>
             </ul>
           </div>
           <div className='navbar-2-2'>
-            <BsFillMoonFill />
+            {props.theme === "light" 
+              ? <BsBrightnessHighFill onClick={ e => {props.themeSwitch(); openMenuHandler(); scrollhandler()}}/> 
+              : <BsFillMoonFill  onClick={ e => {props.themeSwitch(); openMenuHandler(); scrollhandler()}} color="white"/>
+            }
           </div>
         </div>
         

@@ -1,0 +1,19 @@
+.faqs-container {
+    width: 100%;
+    background-color: var(--primary-100);
+    padding: 4rem 0;
+}
+
+.faqs-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.styles_faq-row-wrapper__3vA1D h2 {
+    color: var(--primary-300) !important;
+}
+
+.styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY {
+    color: var(--primary-200) !important;
+}
