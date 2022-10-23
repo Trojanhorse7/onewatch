@@ -4,10 +4,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-:root{
-  --primary-100: #ffffff; 
+:root {
+  --primary-100: #ffffff;
   --primary-200: #000000;
   --primary-300: #28A9E0;
   --primary-400: #68F9BE;

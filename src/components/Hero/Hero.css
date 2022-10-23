@@ -112,6 +112,17 @@
     height: 100%;
 }
 
+.instruction p {
+    margin-top: -2rem;
+}
+
+.instruction p {
+    color: var(--primary-200);
+    width: 100%;
+    font-style: italic;
+    font-size: 13px;
+}
+
 @media screen and (max-width: 1527px) {
     .hero-1 h1 {
         color: var(--primary-100);
@@ -154,16 +165,6 @@
 
     .hero-2 img {
         width: 100%;
-    }
-
-    .instruction p {
-        margin-top: -2rem;
-    }
-
-    .instruction p {
-        color: var(--primary-200);
-        width: 100%;font-style: italic;
-        font-size: 13px;
     }
 }
 

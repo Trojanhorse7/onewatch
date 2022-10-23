@@ -1,16 +1,13 @@
-import React, { useContext } from 'react'
+import React from 'react';
+import "./NftInfo.css";
 
-import "./NftInfo.css"
-import InfoContext from '../../context/infoContext'
-
-const NftInfo = () => {
-    const ctx = useContext(InfoContext)
-    const nftData = ctx.addressInfo.nftData
-    console.log(nftData)
+const NftInfo = (props) => {
+    const info = props.info
+    const nftData = info.nftData
 
     return (
         <div className='nft-infos'>
-            {nftData.map(data => (
+            {nftData.length !== 0 && nftData.map(data => (
                 <div key={data.contract_address} className="nft-info">
                     <div className="name-addy">
                         <h3>{data.contract_ticker_symbol} {data.nft_data ? `#${data.nft_data[0].token_id}` : ""}</h3>
@@ -28,4 +25,4 @@ const NftInfo = () => {
     )
 }
 
-export default NftInfo
+export default NftInfo;

@@ -44,7 +44,7 @@ const Navbar = (props) => {
             <ul>
               <li><Link to="/" onClick={e => {openMenuHandler(); scrollhandler()}}>Home</Link></li>
               <li><Link to="/" onClick={ e => {openMenuHandler(); scrollhandler()}}>Calculator</Link></li>
-              <li><Link to="/" onClick={ e => {openMenuHandler(); scrollhandler()}}>FAQ</Link></li>
+              <li><a href="#faq" onClick={ e => {openMenuHandler(); scrollhandler()}}>FAQ</a></li>
             </ul>
           </div>
           <div className='navbar-2-2'>

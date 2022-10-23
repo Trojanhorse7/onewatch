@@ -1,11 +1,9 @@
-import React, { useContext } from 'react'
+import React, {useState} from 'react'
+import "./TokenTable.css";
 
-import "./TokenTable.css"
-import InfoContext from '../../context/infoContext';
-
-const TokenTable = () => {
-    const ctx = useContext(InfoContext);
-    console.log(ctx.addressInfo.cryptocurrencyData)
+const TokenTable = (props) => {
+    const [info, setInfo] = useState(props.info)
+    console.log(info)
 
     function separator(numb) {
         var str = numb.toString().split(".");
@@ -23,7 +21,7 @@ const TokenTable = () => {
                 </tr>
             </thead>
             <tbody>
-                {ctx.addressInfo.cryptocurrencyData.map( data => (
+                {info.cryptocurrencyData.map( data => (
                     <tr key={data.contract_name}>
                         <td className='token-symbol'> <img src={data.logo_url} alt="" /> {data.contract_ticker_symbol}</td>
                         <td className='warning bold'>{separator((data.balance / 1000000000000000000).toFixed(5))}</td>
@@ -35,7 +33,7 @@ const TokenTable = () => {
     )
 }
 
-export default TokenTable
+export default TokenTable;
 
 // one1p8ka8t2warujqsm6tmlc3yyrckj9z6zmeejflt
 // 0x09eDD3ad4EE8F920437a5EFF889083C5a451685b

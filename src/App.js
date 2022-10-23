@@ -1,13 +1,13 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
-import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero";
-import Token from "./components/Token/Token"
-import Faqs from "./components/Faqs/Faqs"
-import Footer from "./components/Footer/Footer"
-import useLocalStorage from 'use-local-storage'
+import { Routes, Route } from "react-router-dom";
+import ScrollToTop from "react-scroll-to-top";
+import useLocalStorage from 'use-local-storage';
+import Home from "./components/Indexpage";
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
+  
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
 
@@ -17,15 +17,15 @@ function App() {
   }
 
   return (
-    <main className="app" data-theme={theme}>
-      <div className="container">
-        <Navbar themeSwitch={themeSwitch} theme={theme}/>
-        <Hero />
-        <Token />
-        <Faqs />
-        <Footer theme={theme}/>
-      </div>
-    </main>
+      <main className="app" data-theme={theme}>
+        <ScrollToTop height='20' smooth="true" color="var(--primary-500)" style={{marginBottom: "-1rem"}} top="500"/>
+        <div className="container">
+          <ToastContainer/>
+          <Routes>
+            <Route path="/" element={<Home theme={theme} themeSwitch={themeSwitch}/>} />
+          </Routes>
+        </div>
+      </main>
   );
 }
 

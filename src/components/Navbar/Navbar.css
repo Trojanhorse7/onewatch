@@ -24,10 +24,10 @@
 }
 
 .navbar-1 {
-    width: 10rem;
     height: 5rem;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .navbar-1 img {

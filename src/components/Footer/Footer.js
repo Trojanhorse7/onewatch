@@ -26,7 +26,7 @@ const Footer = (props) => {
                         <ul>
                             <li><Link to="/" onClick={scrollhandler}>Home</Link></li>
                             <li><Link to="/" onClick={scrollhandler}>Calculator</Link></li>
-                            <li><Link to="/" onClick={scrollhandler}>FAQ</Link></li>
+                            <li><a href="#faq" onClick={scrollhandler}>FAQ</a></li>
                         </ul>
                         <div className='footer-1-1-1'>
                             <p>Data gotten using Covalent API</p>
