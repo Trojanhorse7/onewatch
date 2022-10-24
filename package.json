@@ -15,7 +15,6 @@
     "react-scripts": "5.0.1",
     "react-scroll-to-top": "^3.0.0",
     "react-spinners": "^0.13.6",
-    "react-textfit": "^1.1.1",
     "react-toastify": "^9.0.1",
     "use-local-storage": "^2.3.6",
     "web-vitals": "^2.1.4"
