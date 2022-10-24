@@ -2,6 +2,7 @@ table{
     margin-top: 2rem;
     width: 100%;
     border: none;
+    color: var(--primary-200);
 }
 
 table tr{

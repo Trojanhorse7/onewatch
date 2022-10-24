@@ -14,7 +14,6 @@ const Indexpage = (props) => {
         setNewInfo(details);
     }
 
-
     return (
         <div>
             <Navbar themeSwitch={props.themeSwitch} theme={props.theme}/>

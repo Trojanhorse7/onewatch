@@ -13,29 +13,31 @@ const AddressInfo = (props) => {
     let tokenContent = <TokenTable />
     let nftContent = <NftInfo />
 
-    info.cryptocurrencyData !== undefined ? tokenContent = <TokenTable /> : tokenContent = <div className='no-token-data'>No Token Info for this address</div>
+    info.cryptocurrencyData !== 0 ? tokenContent = <TokenTable info={info}/> : tokenContent = <div className='no-token-data'>No Token Info for this address</div>
 
-    info.nftData.length !== 0 ? nftContent = <NftInfo /> : nftContent = <div className='no-token-data'>No NFT Info for this address</div>
+    info.nftData.length !== 0 ? nftContent = <NftInfo info={info}/> : nftContent = <div className='no-token-data'>No NFT Info for this address</div>
 
     return (
-        <div className='address-info'>
-            <section>
-                <h3><span className="material-icons-sharp">account_balance</span> Address</h3>
-                <div className="address">
-                    <h4 className='address'>{info.address}</h4>
-                    <a href={link} target="_blank" rel="noreferrer noopener">
-                        <span className="material-icons-sharp">open_in_new</span>
-                    </a>
-                </div>
-            </section>
-            <section>
-                <h3><span className="material-icons-sharp">token</span> Tokens</h3>
-                { tokenContent }
-            </section>
-            <section>
-                <h3><span className="material-icons-sharp">palette</span> NFTs</h3>
-                { nftContent }
-            </section>
+        <div className='address-container'>
+            <div className='address-info'>
+                <section>
+                    <h3><span className="material-icons-sharp">account_balance</span> Address</h3>
+                    <div className="address">
+                        <h4 className='address'>{info.address}</h4>
+                        <a href={link} target="_blank" rel="noreferrer noopener">
+                            <span className="material-icons-sharp">open_in_new</span>
+                        </a>
+                    </div>
+                </section>
+                <section>
+                    <h3><span className="material-icons-sharp">token</span> Tokens</h3>
+                    { tokenContent }
+                </section>
+                <section>
+                    <h3><span className="material-icons-sharp">palette</span> NFTs</h3>
+                    { nftContent }
+                </section>
+            </div>
         </div>
     )
 }

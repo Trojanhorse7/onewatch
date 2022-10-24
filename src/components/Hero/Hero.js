@@ -91,7 +91,6 @@ const Hero = (props) => {
             return setAddressInfo([]);
         })
 
-
         setTimeout(()=> {
             setLoading(false);
         }, 950)
