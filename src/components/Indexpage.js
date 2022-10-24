@@ -11,7 +11,6 @@ const Indexpage = (props) => {
     const [newinfo, setNewInfo] = useState([]);
 
     const info = (details) => {
-        console.log(details);
         setNewInfo(details);
     }
 

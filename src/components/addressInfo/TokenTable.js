@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import "./TokenTable.css";
 
 const TokenTable = (props) => {
-    const [info, setInfo] = useState(props.info)
+    const [info] = useState(props.info)
     console.log(info)
 
     function separator(numb) {
@@ -34,8 +34,3 @@ const TokenTable = (props) => {
 }
 
 export default TokenTable;
-
-// one1p8ka8t2warujqsm6tmlc3yyrckj9z6zmeejflt
-// 0x09eDD3ad4EE8F920437a5EFF889083C5a451685b
-
-// one1asqs4g77g0hr0j37qutlcg0le7jrwvzwutflgy

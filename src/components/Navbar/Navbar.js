@@ -43,7 +43,6 @@ const Navbar = (props) => {
             <AiFillCloseSquare onClick={openMenuHandler} className="navbar-close" />
             <ul>
               <li><Link to="/" onClick={e => {openMenuHandler(); scrollhandler()}}>Home</Link></li>
-              <li><Link to="/" onClick={ e => {openMenuHandler(); scrollhandler()}}>Calculator</Link></li>
               <li><a href="#faq" onClick={ e => {openMenuHandler(); scrollhandler()}}>FAQ</a></li>
             </ul>
           </div>

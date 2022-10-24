@@ -4,7 +4,7 @@ import NftInfo from './NftInfo';
 import TokenTable from './TokenTable';
 
 const AddressInfo = (props) => {
-    const [info, setInfo] = useState(props.info)
+    const [info] = useState(props.info)
 
     console.log(info.cryptocurrencyData);
 
@@ -13,9 +13,9 @@ const AddressInfo = (props) => {
     let tokenContent = <TokenTable />
     let nftContent = <NftInfo />
 
-    info.cryptocurrencyData.length !== undefined ? tokenContent = <TokenTable /> : tokenContent = <div className='no-token-data'>No Token Info for this address</div>
+    info.cryptocurrencyData !== undefined ? tokenContent = <TokenTable /> : tokenContent = <div className='no-token-data'>No Token Info for this address</div>
 
-    // info.nftData.length !== 0 ? nftContent = <NftInfo /> : nftContent = <div className='no-token-data'>No NFT Info for this address</div> 
+    info.nftData.length !== 0 ? nftContent = <NftInfo /> : nftContent = <div className='no-token-data'>No NFT Info for this address</div>
 
     return (
         <div className='address-info'>
@@ -32,10 +32,10 @@ const AddressInfo = (props) => {
                 <h3><span className="material-icons-sharp">token</span> Tokens</h3>
                 { tokenContent }
             </section>
-            {/* <section>
+            <section>
                 <h3><span className="material-icons-sharp">palette</span> NFTs</h3>
                 { nftContent }
-            </section> */}
+            </section>
         </div>
     )
 }

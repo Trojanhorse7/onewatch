@@ -25,7 +25,6 @@ const Footer = (props) => {
                     <div className="footer-1-1">
                         <ul>
                             <li><Link to="/" onClick={scrollhandler}>Home</Link></li>
-                            <li><Link to="/" onClick={scrollhandler}>Calculator</Link></li>
                             <li><a href="#faq" onClick={scrollhandler}>FAQ</a></li>
                         </ul>
                         <div className='footer-1-1-1'>
